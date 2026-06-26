@@ -1,0 +1,70 @@
+ /* Global Styles */
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .chart-section {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .chart-section h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  #sector-chart, #stock-chart, #nav-chart {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  footer {
+    text-align: center;
+    background: #f1f1f1;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 20px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .chart-section h2 {
+      font-size: 1.2rem;
+    }
+
+    #sector-chart, #stock-chart, #nav-chart {
+      max-width: 100%;
+    }
+  }

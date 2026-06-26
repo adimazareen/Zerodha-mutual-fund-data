@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header
+      style="text-align: center; background-color: #34495e; padding: 50px 20px"
+    >
+      <h1
+        style="
+          color: white;
+          font-family: 'Montserrat', sans-serif;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+          font-size: 40px;
+        "
+      >
+        Portfolio Analytics Dashboard
+      </h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Search Bar -->
+      <div style="width: 30rem" class="input-group mb-3 mb-3">
+        <input
+          type="text"
+          id="search-input"
+          class="form-control"
+          placeholder="Search for a mutual or sector..."
+          aria-label="Search"
+          aria-describedby="search-btn"
+          oninput="filterSuggestions()"
+          list="stock-suggestions"
+          placeholder="Search for a stock"
+        />
+        <script>
+          let data = [
+            {
+              name: "Canara Blue Chip Fund",
+              value: "canara-robeco-blue-chip-equity-fund-regular-plan",
+            },
+            {
+              name: "DSP Top 100 Equity Fund",
+              value: "dsp-top-100-equity-fund-regular-plan",
+            },
+            {
+              name: "LIC MF Large Mid Cap Fund",
+              value: "lic-mf-large-mid-cap-fund-direct-plan",
+            },
+            {
+              name: "Nippon India Large Cap Fund",
+              value: "nippon-india-large-cap-fund-regular-plan",
+            },
+            { name: "SBI Large Midcap Fund", value: "sbi-large-midcap-fund" },
+            {
+              name: "HDFC Large and Mid Cap Fund",
+              value: "hdfc-large-and-mid-cap-fund-direct-plan",
+            },
+            {
+              name: "HDFC Flexi Cap Fund",
+              value: "hdfc-flexi-cap-fund-direct-plan",
+            },
+          ];
+        </script>
+        <datalist id="stock-suggestions">
+          <script>
+            data.forEach((stock) => {
+              document.write(
+                `<option value="${stock.name}">${stock.value}</option>`
+              );
+            });
+          </script>
+        </datalist>
+        <div class="input-group-append ms-2">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="search-btn"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <div
+        id="search-suggestions"
+        style="
+          position: absolute;
+          z-index: 1000;
+          background-color: white;
+          border: 1px solid #ced4da;
+          padding: 5px;
+          display: none;
+        "
+      ></div>
+
+      <!-- NAV Line Chart Section -->
+      <div class="chart-section">
+        <h2>Historical NAV Price Chart</h2>
+        <div id="nav-chart"></div>
+      </div>
+
+      <!-- Sector Chart Section -->
+      <!-- <div class="chart-section">
+      <h2>Top 10 Sectors in Portfolio (%)</h2>
+      <div id="sector-chart"></div>
+    </div> -->
+
+      <!-- Stock Chart Section -->
+      <!-- <div class="chart-section">
+      <h2>Top 10 Stocks in Portfolio (%)</h2>
+      <div id="stock-chart"></div>
+    </div> -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Portfolio Analytics. Designed with ❤️ by an Expert Developer.
+    </footer>
+
+    <script src="./main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
